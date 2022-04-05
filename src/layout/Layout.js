@@ -4,6 +4,7 @@ import NotFound from "./NotFound";
 import Menu from "./Menu";
 import { Route, Switch } from "react-router-dom";
 import Home from "../home/Home";
+import ObservationCreate from "../observations/ObservationCreate"; // changed
 
 function Layout() {
   return (
@@ -12,6 +13,9 @@ function Layout() {
       <Menu />
       <div className="container">
         <Switch>
+          <Route path="/observations/new"> {/*new feature added route */}
+            <ObservationCreate />
+          </Route>
           <Route exact={true} path="/">
             <Home />
           </Route>
